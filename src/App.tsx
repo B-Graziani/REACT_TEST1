@@ -1,13 +1,17 @@
 import Pokemon from "./models/pokemon";
 import POKEMONS from "./models/mock-pokemon";
 
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState, useEffect } from "react";
 //OR
 // import React from "react";
 
 // const App: React.FC = () => {
 const App: FunctionComponent = () => {
-  const [pokemons] = useState<Pokemon[]>(POKEMONS);
+  const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+
+  useEffect(() => {
+    setPokemons(POKEMONS);
+  }, []);
 
   return (
     <div>
