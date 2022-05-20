@@ -3,6 +3,7 @@ import Pokemon from "../models/pokemon";
 // import POKEMONS from "../models/mock-pokemon";
 import PokemonCard from "../components/pokemon-card";
 import PokemonService from "../services/pokemon-service";
+import { Link } from "react-router-dom";
 
 const PokemonList: FunctionComponent = () => {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
@@ -20,6 +21,13 @@ const PokemonList: FunctionComponent = () => {
             <PokemonCard key={pokemon.id} pokemon={pokemon} />
           ))}
         </div>
+        <Link
+          className="btn-floating btn-large waves-effect waves-light red z-depth-3"
+          style={{ position: "fixed", top: "100px", right: "100px" }}
+          to="/pokemon/add"
+        >
+          <i className="material-icons">add</i>
+        </Link>
       </div>
     </div>
   );
