@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Pokemon from "../models/pokemon";
 import formatType from "../helpers/format-type";
 import PokemonService from "../services/pokemon-service";
@@ -327,9 +327,18 @@ const PokemonForm: FunctionComponent<Props> = ({ pokemon, isEditForm }) => {
                   ))}
                 </div>
               </div>
+              {/* <div className="card-action">
+                <Link to="/">Retour</Link>
+              </div> */}
+
               <div className="card-action center">
+                <div className="card-action">
+                  <Link className="btn orange" to="/pokemons">
+                    Retour
+                  </Link>
+                </div>
                 {/* Submit button */}
-                <button type="submit" className="btn">
+                <button type="submit" className="btn ">
                   Valider
                 </button>
               </div>
